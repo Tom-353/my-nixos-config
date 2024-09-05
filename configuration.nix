@@ -98,16 +98,14 @@
   };
 
   programs.bash.shellAliases = {
-    update = "sudo nixos-rebuild switch";
-    uptest = "sudo nixos-rebuild test";
-    config = "sudo nano /etc/nixos/configuration.nix";
+    update = "nixos-rebuild switch";
+    uptest = "nixos-rebuild test";
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget git htop mc tmux
     neofetch
