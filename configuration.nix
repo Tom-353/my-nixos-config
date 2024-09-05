@@ -13,6 +13,8 @@
       ./hyprland.nix
 #      ./kde.nix
       ./fingerprint.nix
+      <home-manager/nixos>
+      ./home-manager.nix
     ];
 
   # Bootloader.
@@ -120,7 +122,7 @@
     pkgs.platformio-core # for platformio
     pkgs.openocd # for platformio
   ];
-#  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #nixpkgs.hostPlatform = "x86_64-linux";
 
   # Some programs need SUID wrappers, can be configured further or are

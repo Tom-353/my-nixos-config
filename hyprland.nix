@@ -37,6 +37,7 @@ in
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
+    polkit # authentication agent
     swww # for wallpapers
     nwg-look # Theme customization
     xdg-desktop-portal-gtk
