@@ -13,8 +13,8 @@
       ./hyprland.nix
 #      ./kde.nix
       ./fingerprint.nix
-      <home-manager/nixos>
-      ./home-manager.nix
+#      <home-manager/nixos>
+#      ./home-manager.nix
     ];
 
   # Bootloader.
@@ -111,6 +111,7 @@
   environment.systemPackages = with pkgs; [
     wget git htop mc tmux
     neofetch
+    home-manager
 #    (python3.withPackages (python-pkgs: [
 #      python-pkgs.pip
 #    ]))
