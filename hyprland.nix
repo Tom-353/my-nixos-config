@@ -42,24 +42,45 @@ in
   # Fix qt apps
 #  qt = {
 #    enable = true;
-#    platformTheme = "gtk2";
+#    platformTheme = "gtk2";##
 #    style = "gtk2";
 #  };
   # Enable bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  systemd.user.services.mpris-proxy = {
-    description = "Mpris proxy";
-    after = [ "network.target" "sound.target" ];
-    wantedBy = [ "default.target" ];
-    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  };
+  systemd = {
+    user.services = {
+      mpris-proxy = {
+        description = "Mpris proxy";
+        after = [ "network.target" "sound.target" ];
+        wantedBy = [ "default.target" ];
+        serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+      };
   # Enable authentication agent
+      polkit-gnome-authentication-agent-1 = {
+        description = "polkit-gnome-authentication-agent-1";
+        wantedBy = [ "graphical-session.target" ];
+        wants = [ "graphical-session.target" ];
+        after = [ "graphical-session.target" ];
+        serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+      };
+    };
+    extraConfig = ''
+      DefaultTimeoutStopSec=10s
+    '';
+  };
   security.polkit.enable = true;
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
 #    polkit # authentication agent
+    pkgs.polkit_gnome
     swww # for wallpapers
     nwg-look # Theme customization
     xdg-desktop-portal-gtk
