@@ -3,7 +3,7 @@
 {
   system.autoUpgrade = {
     enable = true;
-    dates = "02:00";
+    dates = "weekly";
     randomizedDelaySec = "45min";
   };
   nix.gc = {

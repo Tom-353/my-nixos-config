@@ -34,10 +34,32 @@ in
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
+  # Desktop portals
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+  # Fix qt apps
+#  qt = {
+#    enable = true;
+#    platformTheme = "gtk2";
+#    style = "gtk2";
+#  };
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+  systemd.user.services.mpris-proxy = {
+    description = "Mpris proxy";
+    after = [ "network.target" "sound.target" ];
+    wantedBy = [ "default.target" ];
+    serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+  };
+  # Enable authentication agent
+  security.polkit.enable = true;
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
-    polkit # authentication agent
+#    polkit # authentication agent
     swww # for wallpapers
     nwg-look # Theme customization
     xdg-desktop-portal-gtk
@@ -46,18 +68,14 @@ in
     kitty # terminal
     wofi # app launcher
     waybar # menu bar
-    dunst # notifications
-    libnotify # needed for dunst
+    dunst libnotify # notifications
     dolphin # file manager
     mpv # media player
     networkmanagerapplet # GUI for networkmanager
-    zuki-themes
-    phinger-cursors
+    zuki-themes phinger-cursors papirus-icon-theme
     brightnessctl
-#    wob # volume/brightness popup # doesnt work
     imv # image viewer
-    slurp # screenshot selector
-    grim #screenshot taker
+    slurp grim #screenshots
     wayidle # idle timeout
     # These packages might fix som of youre (Waybar) issues too
     meson
@@ -66,7 +84,6 @@ in
     wl-clipboard
     wlroots
   ];
-# Adding Waybar
   # Fix waybar not displaying Hyprland workspaces, add this to your configuration:
   nixpkgs.overlays = [
     (self: super: {
@@ -78,6 +95,6 @@ in
   # You also probably want some fonts that contain icons, like nerdfonts.
   fonts.packages = with pkgs; [
     nerdfonts
-    meslo-lgs-nf
+  #  meslo-lgs-nf
   ];
 }

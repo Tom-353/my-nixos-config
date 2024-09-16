@@ -18,8 +18,14 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+#    efi.efiSysMountPoint = "/boot/efi";
+#    grub.enable = true;
+#    grub.efiSupport = true;
+#    grub.device = "nodev";
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -77,14 +83,17 @@
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
       discord
-      libreoffice
+      libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
       krita inkscape
 #      opnenscad
-      mindustry libremines prismlauncher heroic
+      dwarf-fortress mindustry libremines
+      prismlauncher heroic
 #      chromium
       vscode
       gcc
+      gparted # edit partitions # remove later
       zbar # qr code reader
+      termusic yt-dlp ffmpeg # music player + youtube downloader
     ];
   };
   
@@ -99,6 +108,7 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
+  # Bash 
   programs.bash.shellAliases = {
     update = "nixos-rebuild switch";
     uptest = "nixos-rebuild test";
@@ -112,9 +122,10 @@
     wget git htop mc tmux
     neofetch
     home-manager
-#    (python3.withPackages (python-pkgs: [
+    (python3.withPackages (python-pkgs: [
+#       numpy 
 #      python-pkgs.pip
-#    ]))
+    ]))
     nodejs # Needed for jaculus, can delete later
     avrdude # for platformio
   ];
