@@ -82,16 +82,17 @@
     description = "Tom";
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
+      ungoogled-chromium
       discord
       libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
       krita inkscape
 #      opnenscad
-      dwarf-fortress mindustry libremines
+      dwarf-fortress mindustry #libremines
       prismlauncher heroic
 #      chromium
       vscode
       gcc
-      gparted # edit partitions # remove later
+#      gparted # edit partitions # remove later
       zbar # qr code reader
       termusic yt-dlp ffmpeg # music player + youtube downloader
     ];

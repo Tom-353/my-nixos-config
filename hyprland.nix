@@ -79,6 +79,9 @@ in
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
+    hyprshade
+    hyprpicker
+    #hyprlandPlugins.hyprexpo
 #    polkit # authentication agent
     pkgs.polkit_gnome
     swww # for wallpapers
@@ -90,7 +93,7 @@ in
     wofi # app launcher
     waybar # menu bar
     dunst libnotify # notifications
-    dolphin # file manager
+    xfce.thunar # file manager
     mpv # media player
     networkmanagerapplet # GUI for networkmanager
     zuki-themes phinger-cursors papirus-icon-theme
@@ -115,7 +118,8 @@ in
   ];
   # You also probably want some fonts that contain icons, like nerdfonts.
   fonts.packages = with pkgs; [
-    nerdfonts
+#    nerdfonts
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   #  meslo-lgs-nf
   ];
 }
