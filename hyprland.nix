@@ -76,13 +76,16 @@ in
     '';
   };
   security.polkit.enable = true;
+  # File manager
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true; # Mount, trash, and other functionalities
+  services.tumbler.enable = true; # Thumbnail support for images
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
     hyprshade
     hyprpicker
-    #hyprlandPlugins.hyprexpo
-#    polkit # authentication agent
     pkgs.polkit_gnome
     swww # for wallpapers
     nwg-look # Theme customization
@@ -93,14 +96,14 @@ in
     wofi # app launcher
     waybar # menu bar
     dunst libnotify # notifications
-    xfce.thunar # file manager
     mpv # media player
     networkmanagerapplet # GUI for networkmanager
     zuki-themes phinger-cursors papirus-icon-theme
     brightnessctl
     imv # image viewer
     slurp grim #screenshots
-    wayidle # idle timeout
+    qalculate-gtk # calculator
+    gparted # partitions
     # These packages might fix som of youre (Waybar) issues too
     meson
     wayland-protocols
