@@ -12,7 +12,8 @@
 #      ./gnome.nix
       ./hyprland.nix
 #      ./kde.nix
-      ./fingerprint.nix
+#      ./fingerprint.nix
+      ./nvidia.nix
 #      <home-manager/nixos>
 #      ./home-manager.nix
     ];
