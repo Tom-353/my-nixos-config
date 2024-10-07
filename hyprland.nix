@@ -84,6 +84,7 @@ in
   # Install Packages
   environment.systemPackages = with pkgs; [
     hyprland
+    hyprlock
     hyprshade
     hyprpicker
     pkgs.polkit_gnome
