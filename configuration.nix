@@ -10,8 +10,6 @@
       ./management.nix
 #      ./gnome.nix
       ./hyprland.nix
-#      ./fingerprint.nix
-      ./nvidia.nix
     ];
 
   # Bootloader.
