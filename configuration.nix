@@ -7,7 +7,6 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
       ./management.nix
 #      ./gnome.nix
       ./hyprland.nix
@@ -87,16 +86,15 @@
       ungoogled-chromium
       discord
       libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
-      krita inkscape
-#      opnenscad
+      krita inkscape gimp
+      openscad blender prusa-slicer
       dwarf-fortress mindustry #libremines
       prismlauncher heroic
-#      chromium
       vscode
       gcc
-#      gparted # edit partitions # remove later
-      zbar # qr code reader
+      baobab gparted # edit partitions
       termusic yt-dlp ffmpeg # music player + youtube downloader
+      protonup # Video game compatibility updater
     ];
   };
   
@@ -109,6 +107,10 @@
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    extraCompatPackages = [pkgs.proton-ge-bin];
+  };
+  environment.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/tom/.steam/root/compatibilitytools.d";
   };
 
   # Bash 
