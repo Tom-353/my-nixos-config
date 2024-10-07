@@ -104,6 +104,7 @@ in
     slurp grim #screenshots
     qalculate-gtk # calculator
     gparted # partitions
+    gnome.gnome-disk-utility
     # These packages might fix som of youre (Waybar) issues too
     meson
     wayland-protocols

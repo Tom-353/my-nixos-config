@@ -6,15 +6,12 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./management.nix
 #      ./gnome.nix
       ./hyprland.nix
-#      ./kde.nix
 #      ./fingerprint.nix
       ./nvidia.nix
-#      <home-manager/nixos>
-#      ./home-manager.nix
     ];
 
   # Bootloader.
@@ -95,6 +92,7 @@
       baobab gparted # edit partitions
       termusic yt-dlp ffmpeg # music player + youtube downloader
       protonup # Video game compatibility updater
+      github-desktop
     ];
   };
   
@@ -132,13 +130,8 @@
 #      python-pkgs.pip
     ]))
     nodejs # Needed for jaculus, can delete later
-    avrdude # for platformio
   ];
   
-  services.udev.packages = [ 
-    pkgs.platformio-core # for platformio
-    pkgs.openocd # for platformio
-  ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #nixpkgs.hostPlatform = "x86_64-linux";
 
