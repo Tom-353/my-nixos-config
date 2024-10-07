@@ -54,6 +54,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # Enable sane to scan documents
+  hardware.sane.enable = true; # enables support for SANE scanners
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -78,7 +80,7 @@
   users.users.tom = {
     isNormalUser = true;
     description = "Tom";
-    extraGroups = [ "networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs; [
       ungoogled-chromium
       discord
