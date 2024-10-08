@@ -84,6 +84,7 @@ in
   services.tumbler.enable = true; # Thumbnail support for images
   # Install Packages
   environment.systemPackages = with pkgs; [
+    hypridle
     hyprshade
     hyprpicker
     pkgs.polkit_gnome
