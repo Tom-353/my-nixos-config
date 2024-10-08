@@ -9,6 +9,7 @@ in
     enable = true; 
     xwayland.enable = true;
   };
+  programs.hyprlock.enable = true;
   # Enable greetd login manager
   services.greetd = {
     enable = true;
@@ -83,8 +84,6 @@ in
   services.tumbler.enable = true; # Thumbnail support for images
   # Install Packages
   environment.systemPackages = with pkgs; [
-    hyprland
-    hyprlock
     hyprshade
     hyprpicker
     pkgs.polkit_gnome
