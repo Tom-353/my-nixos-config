@@ -38,7 +38,7 @@ in
   # Desktop portals
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland ];
   };
   # Fix qt apps
 #  qt = {
@@ -90,9 +90,6 @@ in
     pkgs.polkit_gnome
     swww # for wallpapers
     nwg-look # Theme customization
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
-    xwayland
     kitty # terminal
     wofi # app launcher
     waybar # menu bar
