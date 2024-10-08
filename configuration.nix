@@ -54,6 +54,13 @@
   services.printing.enable = true;
   # Enable sane to scan documents
   hardware.sane.enable = true; # enables support for SANE scanners
+  services.avahi.enable = true;
+  services.avahi.nssmdns4 = true;
+  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+  services.udev.packages = [ pkgs.sane-airscan ];
+  nixpkgs.config.packageOverrides = pkgs: {
+    xsaneGimp = pkgs.xsane.override { gimpSupport = true; };
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -149,7 +156,9 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [
+    8610 8612 # for canon pixma scanner
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
