@@ -58,9 +58,6 @@
   services.avahi.nssmdns4 = true;
   hardware.sane.extraBackends = [ pkgs.sane-airscan ];
   services.udev.packages = [ pkgs.sane-airscan ];
-  nixpkgs.config.packageOverrides = pkgs: {
-    xsaneGimp = pkgs.xsane.override { gimpSupport = true; };
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -89,14 +86,12 @@
     packages = with pkgs; [
       ungoogled-chromium
       discord
-      libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
       krita inkscape gimp
       openscad blender prusa-slicer
       dwarf-fortress mindustry #libremines
       prismlauncher heroic
-      vscode
+      vscode-fhs
       gcc
-      baobab gparted # edit partitions
       termusic yt-dlp ffmpeg # music player + youtube downloader
       protonup # Video game compatibility updater
       github-desktop
@@ -114,6 +109,8 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     extraCompatPackages = [pkgs.proton-ge-bin];
   };
+  hardware.steam-hardware.enable = true;                                                                                                       
+#  opengl.driSupport32Bit = true;
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/tom/.steam/root/compatibilitytools.d";
   };
@@ -136,6 +133,9 @@
 #       numpy 
 #      python-pkgs.pip
     ]))
+    simple-scan
+    baobab gparted # edit partitions
+    libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
     nodejs # Needed for jaculus, can delete later
   ];
   
@@ -156,9 +156,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [
-    8610 8612 # for canon pixma scanner
-  ];
+  # networking.firewall.allowedTCPPorts = [];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
