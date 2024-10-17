@@ -129,6 +129,7 @@
     wget git htop mc tmux
     neofetch
     home-manager
+    gnome.adwaita-icon-theme
     (python3.withPackages (python-pkgs: [
 #       numpy 
 #      python-pkgs.pip
