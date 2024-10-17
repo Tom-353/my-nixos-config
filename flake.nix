@@ -13,10 +13,10 @@
       "nixos-pc" = lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          #./configuration.nix
-          #./hosts/nixos-pc/hardware-configuration.nix
-          #./nvidia.nix
-          #./management.nix
+          ./configuration.nix
+          ./hosts/nixos-pc/hardware-configuration.nix
+          ./nvidia.nix
+          ./management.nix
         ];
       };
     };
