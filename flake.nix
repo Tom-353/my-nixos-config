@@ -2,7 +2,7 @@
   description = "My nixos config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
   };
 
   outputs = { self, nixpkgs, ... }: 
@@ -11,7 +11,7 @@
   in
   {
     nixosConfigurations = {
-      "nixos-pc" = lib.nixosSystem {
+      "nixos-pc" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
