@@ -1,9 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./xserver.nix
-  ];
+  services.xserver = {
+    # Enable the X11 windowing system.
+    enable = true;
+    # Configure keymap in X11
+    xkb = {
+      layout = "us,cz";
+      options = "grp:win_space_toggle";
+      variant = "";
+    };
+  };
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -29,5 +36,4 @@
     blur-my-shell
     pop-shell
   ];
-
 }
