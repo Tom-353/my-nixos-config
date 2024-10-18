@@ -14,7 +14,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/nixos-pc/hardware-configuration.nix
-          ./modules/configuration.nix
+          ./configuration.nix
           ./modules/nvidia.nix
           ./modules/management.nix
           ./modules/hyprland.nix
@@ -24,7 +24,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/nixos-t440/hardware-configuration.nix
-          ./modules/configuration.nix
+          ./configuration.nix
           ./modules/fingerprint.nix
           ./modules/management.nix
           ./modules/hyprland.nix
