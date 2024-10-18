@@ -1,0 +1,25 @@
+* {
+    border-radius: 5px;
+    background: none;
+    border: none;
+    color: #fff;
+    background-blend-mode: normal;
+}
+
+window {
+    border: 2px solid #33ccff;
+    background: rgba(100,114,125, 0.7);
+}
+box#outer-box {
+    margin: 5px;
+}
+#scroll {
+    margin: 5px;
+}
+#input {
+    margin: 5px;
+    background: rgba(81,94,103, 0.5);
+}
+#selected label {
+    color: #33ccff;
+}

@@ -1,0 +1,201 @@
+{
+
+	"group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-hardware"
+        },
+		"modules": [
+			//"battery",
+			"cpu",
+			"memory",
+            "disk"
+		]
+	},
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}%",
+        "max-length": 10
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "unit": "GB",
+        "tooltip-format":  "Available {free} of {total}"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "  {percentage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "RAM - {used:0.1f}GiB used"
+    },
+    "pulseaudio": {
+        "max-volume": 150,
+        "format": "{icon}",
+        "tooltip-format": "{volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        }
+    },
+    "custom/os_button": {
+        "format": "",
+        "on-click": "wofi -I --show drun",
+        "tooltip": false
+    },
+	"group/power": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-left-to-right": false,
+            "click-to-reveal": true,
+            "transition-duration": 500,
+            "children-class": "not-power"
+        },
+		"modules": [
+            "custom/menu",
+            "custom/shade_button",
+            "custom/logout_button",
+            "custom/shutdown_button",
+            "custom/restart_button"
+		]
+	},
+    "custom/menu": {
+        "format": "󰇙",
+        "tooltip": false
+    },
+    "custom/shade_button": {
+        "format": "",
+        "on-click": "hyprshade toggle",
+        "tooltip": false
+    },
+    "custom/shutdown_button": {
+        "format": " ",
+        "on-click": "poweroff",
+        "tooltip": false
+    },
+    "custom/restart_button": {
+        "format": "",
+        "on-click": "reboot",
+        "tooltip": false
+    },
+    "custom/logout_button": {
+        "format": "󰿅",
+        "on-click": "hyprctl dispatch exit",
+        "tooltip": false
+    },
+    "clock": {
+        "format": " {:%R %d.%m.%Y} ",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode"
+        }
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-cz": "CZ"
+    },
+    "hyprland/workspaces": {
+        "format": "{name} {windows} ",
+        "icon-size": 32,
+        "spacing": 16,
+        "show-special": true,
+        "window-rewrite-default": "",
+        "window-rewrite": {
+          "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+          "title<Picture-in-Picture>": "",
+          "title<.*pdf.*>": "",
+          "class<firefox>": "󰈹", // Windows whose classes are "firefox"
+          "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+          "GitHub Desktop": "",
+          "chrome": "",
+          "chromium": "",
+          "kitty": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+          "code": "󰨞",
+          "mc": "",
+          "dolphin": "",
+          "thunar": "",
+          "qalculate": "󰪚",
+          "nwg-look": "󰒓",
+          "class<discord>": "",
+          "title<termusic>": "󰝚",
+          "mpv": "󰿎",
+          "gparted": "󰥠",
+          "baobab": "󰥠",
+          "gnome-disks": "󰥠",
+          "zbar": "󰐲",
+          "blueman": "󰂯",
+          "network": "󰖩",
+          "steam": "󰓓",
+          "heroic": "󰺷",
+          "libreoffice": "󰈙",
+          "inkscape": "",
+          "krita": "",
+          "class<minecraft>": "󰍳",
+          "Minecraft": "󰍳",
+          "Half-Life": "󰂩",
+          "mindustry": "M",
+          "openscad":"",
+          "blender":"󰂫",
+          "prusa":"",
+          "gimp": "",
+          }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 3
+    },
+        "custom/weather": {
+        "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Brno+Czechia",
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": true,
+        "interval": 36000
+    },
+}
