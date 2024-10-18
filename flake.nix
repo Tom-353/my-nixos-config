@@ -19,6 +19,16 @@
           ./management.nix
         ];
       };
+      "nixos-t440" = lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./hosts/nixos-t440/hardware-configuration.nix
+          ./fingerprint.nix
+          ./management.nix
+          ({ config, pkgs, ... }:{environment.systemPackages = with pkgs; [ zbar ];})
+        ];
+      };
     };
 
   };
