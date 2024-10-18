@@ -53,6 +53,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Install direnv for development shells
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     wget git htop mc tmux
