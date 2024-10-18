@@ -1,30 +1,5 @@
-# DEPRECATED!!
-
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
-
 {
-  # Bootloader.
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-#    efi.efiSysMountPoint = "/boot/efi";
-#    grub.enable = true;
-#    grub.efiSupport = true;
-#    grub.device = "nodev";
-  };
-  boot.supportedFilesystems = [ "ntfs" ];
-
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -72,49 +47,8 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tom = {
-    isNormalUser = true;
-    description = "Tom";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
-    packages = with pkgs; [
-      ungoogled-chromium
-      discord
-      krita inkscape gimp
-      openscad blender prusa-slicer
-      dwarf-fortress mindustry #libremines
-      prismlauncher heroic
-      vscode-fhs
-      gcc
-      termusic yt-dlp ffmpeg # music player + youtube downloader
-      protonup # Video game compatibility updater
-      github-desktop
-    ];
-  };
-  
   # Install firefox.
   programs.firefox.enable = true;
-
-  # Install steam
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    extraCompatPackages = [pkgs.proton-ge-bin];
-  };
-  hardware.steam-hardware.enable = true;                                                                                                       
-#  opengl.driSupport32Bit = true;
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/tom/.steam/root/compatibilitytools.d";
-  };
-
-  # Bash 
-  programs.bash.shellAliases = {
-    update = "nixos-rebuild switch";
-    uptest = "nixos-rebuild test";
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -165,5 +99,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
