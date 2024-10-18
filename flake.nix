@@ -13,19 +13,21 @@
       "nixos-pc" = lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
           ./hosts/nixos-pc/hardware-configuration.nix
-          ./nvidia.nix
-          ./management.nix
+          ./modules/configuration.nix
+          ./modules/nvidia.nix
+          ./modules/management.nix
+          ./modules/hyprland.nix
         ];
       };
       "nixos-t440" = lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
           ./hosts/nixos-t440/hardware-configuration.nix
-          ./fingerprint.nix
-          ./management.nix
+          ./modules/configuration.nix
+          ./modules/fingerprint.nix
+          ./modules/management.nix
+          ./modules/hyprland.nix
           ({ config, pkgs, ... }:{environment.systemPackages = with pkgs; [ zbar ];})
         ];
       };

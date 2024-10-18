@@ -5,13 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./management.nix
-#      ./gnome.nix
-      ./hyprland.nix
-    ];
-
   # Bootloader.
   boot.loader = {
     systemd-boot.enable = true;
