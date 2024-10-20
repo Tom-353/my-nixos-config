@@ -307,7 +307,12 @@ in
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/hypr".source = ./hyprland;
+    ".config/hypr" = {
+      source = ./hyprland;
+  #    onChange = ''
+  #      hyprctl reload
+  #    '';
+    };
     ".config/waybar".source = ./waybar;
     ".config/wofi".source = ./wofi;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
