@@ -15,7 +15,6 @@
   environment.systemPackages = with pkgs; [
       protonup # Video game compatibility updater
       prismlauncher heroic
-      dwarf-fortress mindustry #libremines
   ];
 
 }

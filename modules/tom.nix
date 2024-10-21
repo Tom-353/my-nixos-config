@@ -11,11 +11,9 @@
       krita inkscape gimp
       openscad blender prusa-slicer
       dwarf-fortress mindustry #libremines
-      prismlauncher heroic
       vscode-fhs
       gcc
       termusic yt-dlp ffmpeg # music player + youtube downloader
-      protonup # Video game compatibility updater
       github-desktop
     ];
   };
