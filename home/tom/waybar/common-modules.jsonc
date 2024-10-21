@@ -72,7 +72,7 @@
     },
     "custom/os_button": {
         "format": "",
-        "on-click": "wofi -I --show drun",
+        "on-click": "pidof wofi || wofi -I --show drun",
         "tooltip": false
     },
 	"group/power": {
