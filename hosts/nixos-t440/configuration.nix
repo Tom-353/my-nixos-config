@@ -15,7 +15,7 @@
   };
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos-t440"; # Define your hostname.
 
   environment.systemPackages = with pkgs; [ zbar ];
 
