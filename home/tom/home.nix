@@ -293,7 +293,7 @@ in
        home-manager switch --flake ${flake_source} && hyprctl reload
      '')
      (pkgs.writeShellScriptBin "os-update" ''
-       sudo nixos-rebuild switch --flake ${flake_source}#$HOSTNAME
+       sudo nixos-rebuild switch --flake ${flake_source}
      '')
   ];
 
