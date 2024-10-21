@@ -98,22 +98,22 @@
     "custom/shade_button": {
         "format": "",
         "on-click": "hyprshade toggle",
-        "tooltip": false
+        "tooltip-format": "Toggle night light"
     },
     "custom/shutdown_button": {
         "format": " ",
         "on-click": "poweroff",
-        "tooltip": false
+        "tooltip-format": "Shutdown"
     },
     "custom/restart_button": {
         "format": "",
         "on-click": "reboot",
-        "tooltip": false
+        "tooltip-format": "Restart"
     },
     "custom/logout_button": {
         "format": "󰿅",
         "on-click": "hyprctl dispatch exit",
-        "tooltip": false
+        "tooltip-format": "Exit"
     },
     "clock": {
         "format": " {:%R %d.%m.%Y} ",

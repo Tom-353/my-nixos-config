@@ -12,6 +12,7 @@
         "custom/weather"
     ],
     "modules-right":[
+        "battery",
         "group/hardware",
         "tray",
         "group/audio",
