@@ -98,6 +98,7 @@ in
     networkmanagerapplet # GUI for networkmanager
     zuki-themes phinger-cursors papirus-icon-theme
     brightnessctl
+    pavucontrol # volume control
     imv # image viewer
     slurp grim #screenshots
     qalculate-gtk # calculator
