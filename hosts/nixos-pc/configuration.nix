@@ -15,5 +15,5 @@
   };
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos=pc"; # Define your hostname.
+  networking.hostName = "nixos-pc"; # Define your hostname.
 }
