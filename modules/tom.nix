@@ -12,7 +12,6 @@
       openscad blender prusa-slicer
       dwarf-fortress mindustry #libremines
       vscode-fhs
-      gcc
       termusic yt-dlp ffmpeg # music player + youtube downloader
       github-desktop
     ];
