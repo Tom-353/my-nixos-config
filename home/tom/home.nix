@@ -308,6 +308,12 @@ in
     };
     ".config/waybar".source = ./waybar;
     ".config/wofi".source = ./wofi;
+    ".profile".text = ''
+      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n$ \[\033[0m\]"
+    '';
+    ".bashrc".text = ''
+      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n$ \[\033[0m\]"
+    '';
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
