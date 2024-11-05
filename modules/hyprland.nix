@@ -87,7 +87,7 @@ in
     hypridle
     hyprshade
     hyprpicker
-    pkgs.polkit_gnome
+    polkit_gnome
     swww # for wallpapers
     nwg-look # Theme customization
     kitty # terminal
