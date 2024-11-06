@@ -72,6 +72,7 @@
     simple-scan
     baobab gparted # edit partitions
     vlc
+    playerctl
     libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
     libqalculate qalculate-gtk # calculator
     nodejs # Needed for jaculus, can delete later
