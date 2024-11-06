@@ -2,8 +2,8 @@
 @define-color tile_color rgba(81,94,103, 0.5);
 
 * {
-    font-family: 'Fira Code';
-    font-size: 14px;
+    font-family: 'DroidSansM Nerd Font';
+    font-size: 15px;
     color: #fff;
     border-radius: 10px;
 }
@@ -33,30 +33,35 @@ window#waybar {
     background-color: transparent;
 }
 #custom-os_button {
-  font-size: 20px;
-	padding-left: 12px;
-	padding-right: 20px;
+    font-size: 20px;
+	padding-left: 10px;
+	padding-right: 18px;
 	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 #custom-os_button:hover {
     background:  #fff;
     color: #000;
 }
+
 #workspaces button {
-    font-size: 16px;
+    font-size: 17px;
     margin-left: 3px;
     margin-right: 3px;
     padding-right: 5px;
     background: @tile_color;
-    color: white;
-    border-bottom: 3px solid transparent;
+    color: #aaa;
+    /*border-bottom: 3px solid transparent;*/
+}
+#workspaces button.visible {
+    color: #fff;
 }
 #workspaces button:hover {
     background:  #fff;
     color: #000;
 }
-
+#workspaces button.urgent {
+    color: orange;
+}
 #workspaces button.active {
     color:#33ccff;
 }
@@ -69,17 +74,25 @@ window#waybar {
     background:  #fff;
     color: #000;
 }
-#clock, #cpu, #memory, #disk, #pulseaudio, #battery, #language {
+#clock {
     padding-left: 3px;
     padding-right: 3px;
+    margin-right: 5px;
+}
+#cpu, #memory, #disk, #pulseaudio, #battery, #language {
+    background:  @tile_color;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 5px;
 }
 #tray{
-  margin-left: 5px;
-  margin-right: 5px;
+    margin-right: 5px;
 }
+/*
 #tray > .passive {
 	border-bottom: none;
 }
+*/
 #tray > .active {
     background:  @tile_color;
 }

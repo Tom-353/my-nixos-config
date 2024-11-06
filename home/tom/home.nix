@@ -2,10 +2,10 @@
 let
   primary_colour = "33ccff";
   secondary_colour = "00ff99";
-  background_colour = "46466b";
+  background_colour = "64727d";
   border_radius = "10";
   border_width = "2";
-  font = "Droid Sans Mono";
+  font = "DroidSansM Nerd Font";
   icon_theme = "Papirus-Dark";
   flake_source = "github:Tom-353/my-nixos-config";
 in
@@ -254,7 +254,7 @@ in
         offset = "15x15";
         origin = "top-right";
         frame_color = "#${primary_colour}";
-        font = "${font} 10";
+        font = "${font}";
         frame_width = "${border_width}";
         corner_radius = "${border_radius}";
         background = "#${background_colour}aa";
