@@ -144,9 +144,7 @@
         "format-cz": "CZ"
     },
     "hyprland/workspaces": {
-        "format": "{name} {windows} ",
-        "icon-size": 32,
-        "spacing": 16,
+        "format": "{windows}",
         "show-special": true,
         "window-rewrite-default": "",
         "window-rewrite": {

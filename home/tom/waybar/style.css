@@ -4,7 +4,7 @@
 * {
     font-family: 'DroidSansM Nerd Font';
     font-size: 15px;
-    color: #fff;
+    /*color: #fff;*/
     border-radius: 10px;
 }
 
@@ -45,25 +45,31 @@ window#waybar {
 
 #workspaces button {
     font-size: 17px;
-    margin-left: 3px;
-    margin-right: 3px;
-    padding-right: 5px;
+    margin-right: 5px;
+    padding-right: 8px;
+    color: #fff;
     background: @tile_color;
-    color: #aaa;
     /*border-bottom: 3px solid transparent;*/
 }
-#workspaces button.visible {
-    color: #fff;
+#workspaces button:last-child {
+    margin-right: 0;
 }
 #workspaces button:hover {
     background:  #fff;
     color: #000;
+}
+#workspaces button.visible {
+    color: #aaa;
 }
 #workspaces button.urgent {
     color: orange;
 }
 #workspaces button.active {
     color:#33ccff;
+}
+#workspaces button.special {
+    border-left: #aaa 2px solid;
+    border-right: #aaa 2px solid;
 }
 
 #custom-shade_button, #custom-logout_button, #custom-restart_button, #custom-shutdown_button, #custom-menu {

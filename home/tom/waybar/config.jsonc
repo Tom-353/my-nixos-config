@@ -5,7 +5,8 @@
     "mode": "dock",
     "modules-left":[
         "custom/os_button",
-        "group/hypr"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center":[
         "clock",
@@ -22,19 +23,13 @@
 	"include": [
 		"~/.config/waybar/common-modules.jsonc"
 	],
-	"group/hypr": {
-        "orientation": "inherit",
-        /*"drawer": {
-            "transition-duration": 500,
-            "children-class": "not-hypr"
-        },*/
-		"modules": [
-            "hyprland/workspaces",
-            "hyprland/window"
-		]
-	},
     "hyprland/window": {
-        "format": " {title} "
+        "format": "{title}",
+        "separate-outputs": true,
+        "rewrite": {
+            "(.*) — Mozilla Firefox": " 󰈹 $1",
+            "(.*) - Visual Studio Code": " 󰨞 $1",
+        }
     },
 	"group/audio": {
         "orientation": "inherit",
@@ -51,52 +46,5 @@
         "min": 0,
         "max": 100,
         "orientation": "horizontal"
-    }
-},
-{
-    "name": "side",
-    "output":[],
-    "layer":"top",
-    "positon":"left",
-    "mode": "dock",
-    "modules-left":[
-        "custom/os_button",
-        "clock",
-        "hyprland/workspaces"
-    ],
-    "modules-center":[
-        "group/power"
-    ],
-    "modules-right":[
-        "group/hardware",
-        "tray",
-        "group/audio",
-        "hyprland/language",
-    ],
-	"include": [
-		"~/.config/waybar/common-modules.jsonc"
-	],
-    "clock": {
-        "format": "{:%R\n%d.%m.\n%Y}",
-    },
-    "hyprland/workspaces": {
-        "format": "{name}\n{windows}",
-        "format-window-separator": "\n",
-    },
-	"group/audio": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-audio"
-        },
-		"modules": [
-            "pulseaudio",
-            "pulseaudio/slider"
-		]
-	},
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "vertical"
     }
 }]
