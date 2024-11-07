@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   imports = [
     ./../common.nix
@@ -13,7 +13,8 @@
 #    grub.efiSupport = true;
 #    grub.device = "nodev";
   };
+  boot.loader.systemd-boot.consoleMode = "auto";
+  services.greetd.settings.default_session.command = "${pkgs.dbus}/bin/dbus-run-session ${lib.getExe pkgs.cage} -s -- sh -c '${lib.getExe pkgs.wlr-randr} --output DP-3 --mode 2560x1440@59.951000Hz && ${lib.getExe pkgs.greetd.regreet}'";
   boot.supportedFilesystems = [ "ntfs" ];
-
   networking.hostName = "nixos-pc"; # Define your hostname.
 }

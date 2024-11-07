@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
@@ -11,15 +11,29 @@ in
   };
   programs.hyprlock.enable = true;
   # Enable greetd login manager
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${tuigreet} --time --remember --cmd Hyprland";
-        user = "greeter";
-      };
-    };
-  };
+  programs.regreet.enable = true;
+  environment.etc."greetd/regreet.toml".text = lib.mkForce ''
+    [background]
+    # Path to the background image
+    path = "/etc/greetd/background.png"
+
+    [GTK]
+    # Whether to use the dark theme
+    application_prefer_dark_theme = true
+
+    # Cursor theme name
+    cursor_theme_name = "Adwaita"
+
+    # Font name and size
+    #font_name = "Cantarell 16"
+
+    # Icon theme name
+    icon_theme_name = "Adwaita"
+
+    # GTK theme name
+    theme_name = "Canta"
+  '';
+  environment.etc."greetd/background.png".source = ./../background.png;
   # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
   systemd.services.greetd.serviceConfig = {
     Type = "idle";
@@ -110,6 +124,8 @@ in
     wayland-utils
     wl-clipboard
     wlroots
+    wlr-randr   # for regreet
+    canta-theme # for regreet
   ];
   # Fix waybar not displaying Hyprland workspaces, add this to your configuration:
   nixpkgs.overlays = [
