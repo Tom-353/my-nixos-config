@@ -74,7 +74,7 @@
     },
     "custom/os_button": {
         "format": "",
-        "on-click": "pidof wofi || wofi -I --show drun",
+        "on-click": "pidof wofi && pkill wofi || wofi -I --show drun -l top_left -W 300 -H 90%",
         "tooltip": false
     },
 	"group/power": {
