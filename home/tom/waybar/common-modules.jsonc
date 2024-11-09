@@ -162,7 +162,7 @@
           "class<thunar>":  "",
           "class<qalculate.*>": "󰪚",
           "class<nwg-look>": "󰒓",
-          "class<discord>": "",
+          "class<discord>": "󰙯",
           "class<mpv>": "󰿎",
           "class<vlc>": "󰕼",
           "class<imv>": "",
@@ -206,7 +206,7 @@
             "(.*) - Blender 4.1":        " 󰂫 $1",
             "(.*) — OpenSCAD":           "  $1",
             "(.*) - Chromium":           "  $1",
-            "(.*) - Discord":            "  $1",
+            "(.*) - Discord":            " 󰙯 $1",
             "(.*) - mpv":                " 󰿎 $1",
         }
     },
