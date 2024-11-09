@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   # Enable networking
   networking.networkmanager.enable = true;
@@ -60,7 +60,7 @@
   };
 
   # List packages installed in system profile.
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     wget git htop mc tmux
     neofetch
     home-manager
@@ -76,6 +76,8 @@
     libreoffice hunspell hunspellDicts.cs_CZ hunspellDicts.en_GB-ize hunspellDicts.en_US
     libqalculate qalculate-gtk # calculator
     nodejs # Needed for jaculus, can delete later
+  ]) ++ [
+    pkgs-unstable.nixd
   ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
