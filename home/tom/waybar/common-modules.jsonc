@@ -146,68 +146,91 @@
         "show-special": true,
         "window-rewrite-default": "",
         "window-rewrite": {
-          "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-          "title<Picture-in-Picture>": "",
-          "title<.*pdf.*>": "",
-          "class<firefox>": "󰈹", // Windows whose classes are "firefox"
-          "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-          "class<GitHub Desktop>": "",
-          "chrome":   "",
-          "class<chromium-browser>": "",
-          "title<mc [.*>":      "",
-          "title<termusic>": "󰝚",
-          "class<kitty>": "", // Windows that contain "kitty" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-          "class<code-url-handler>": "󰨞",
-          "class<dolphin>": "",
-          "class<thunar>":  "",
-          "class<qalculate.*>": "󰪚",
-          "class<nwg-look>": "󰒓",
-          "class<discord>": "󰙯",
-          "class<mpv>": "󰿎",
-          "class<vlc>": "󰕼",
-          "class<imv>": "",
-          "vim": "",
-          "title<Authenticate>": "",
-          "class<simple-scan>": "󰚫",
-          "class<GParted>":     "󰥠",
-          "class<org.gnome.baobab>":      "󰥠",
-          "class<gnome-disks>": "󰥠",
-          "zbar": "󰐲",
-          "class<.blueman-manager-wrapped>": "󰂯",
-          "class<nm-.*>": "󰖩",
-          "steam": "󰓓",
-          "class<heroic>": "󰺷",
-          "class<libreoffice.*>": "󰈙",
-          "class<org.inkscape.Inkscape>": "",
-          "class<krita>": "",
-          "class<minecraft>": "󰍳",
-          "Minecraft":        "󰍳",
-          "Prism Launcher":   "󰍳",
-          "Half-Life": "󰂩",
-          "class<java> title<Mindustry>": "Ｍ",
-          "class<org.openscad.>":"",
-          "class<blender>":"󰂫",
-          "class<PrusaSlicer>":"",
-          "class<Gimp.*>": "",
-          "class<pavucontrol>": " ",
-          "class<Matplotlib>": "",
-          "class<nvidia-settings>": "",
+            // A
+            // B
+            "class<org\\.gnome\\.baobab>": "󰥠",
+            "class<blender>":"󰂫",
+            "class<\\.blueman-manager-wrapped>": "󰂯",
+            // C
+            "class<chrome-browser>": "",
+            "class<chromium-browser>": "",
+            "class<code-url-handler>": "󰨞",
+            // D
+            "class<discord>": "󰙯",
+            "class<dolphin>": "",
+            // F
+            "class<firefox>": "󰈹",
+            "class<firefox> title<.*youtube.*>": "",
+            "class<firefox> title<Picture-in-Picture>": "",
+            "class<firefox> title<.*pdf.*>": "",
+            "class<firefox> title<.*github.*>": "",
+            // G
+            "class<Gimp.*>": "",
+            "class<GitHub Desktop>": "",
+            "class<gnome-disks>": "󰥠",
+            "class<GParted>": "󰥠",
+            // H
+            "class<heroic>": "󰺷",
+            "class<hl_linux>": "󰂩",
+            // I
+            "class<imv>": "",
+            "class<org\\.inkscape\\.Inkscape>": "",
+            // J
+            "class<java> title<Mindustry>": "Ｍ",
+            // K
+            "class<kitty> title<mc [.*>": "",
+            "class<kitty> title<termusic>": "󰝚",
+            "class<kitty>": "",
+            "class<krita>": "",
+            // L
+            "class<libreoffice.*>": "󰈙",
+            // M
+            "class<Matplotlib>": "",
+            "class<minecraft>": "󰍳",
+            "class<mpv>": "󰿎",
+            // N
+            "class<nm-.*>": "󰖩",
+            "class<nvidia-settings>": "",
+            "class<nwg-look>": "󰒓",
+            // O
+            "class<org\\.openscad\\.>":"",
+            // P
+            "class<pavucontrol>": " ",
+            "class<polkit.*>": "",
+            "class<org\\.prismlauncher\\.PrismLauncher>": "󰍳",
+            "class<PrusaSlicer>":"",
+            // Q
+            "class<qalculate.*>": "󰪚",
+            // R
+            // S
+            "class<steam>": "󰓓",
+            "class<steam_app_.*>": "󰺷",
+            "class<simple-scan>": "󰚫",
+            // T
+            "class<thunar>":  "",
+            // U
+            // V
+            "class<vlc>": "󰕼",
+            //"vim": "",
+            // W
+            // Z
+            "zbar": "󰐲",
         }
     },
     "hyprland/window": {
         "format": "{title}",
         "separate-outputs": true,
         "rewrite": {
-            "(.*) — Mozilla Firefox":    " 󰈹 $1",
-            "(.*) - Visual Studio Code": " 󰨞 $1",
-            "(.*) — LibreOffice (.*)":   " 󰈙 $2 | $1",
-            "(.*) - VLC media player":   " 󰕼 $1",
-            "(.*) - Inkscape":           "  $1",
             "(.*) - Blender 4.1":        " 󰂫 $1",
-            "(.*) — OpenSCAD":           "  $1",
             "(.*) - Chromium":           "  $1",
             "(.*) - Discord":            " 󰙯 $1",
+            "(.*) - Inkscape":           "  $1",
+            "(.*) — LibreOffice (.*)":   " 󰈙 $2 | $1",
+            "(.*) — Mozilla Firefox":    " 󰈹 $1",
             "(.*) - mpv":                " 󰿎 $1",
+            "(.*) — OpenSCAD":           "  $1",
+            "(.*) - Visual Studio Code": " 󰨞 $1",
+            "(.*) - VLC media player":   " 󰕼 $1",
         }
     },
     "tray": {
