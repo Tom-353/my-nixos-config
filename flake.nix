@@ -3,18 +3,23 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    unstablepkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
-    let 
+  outputs = { self, nixpkgs, unstablepkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
       lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = unstablepkgs.legacyPackages.${system};
     in {
     nixosConfigurations = {
       "nixos-pc" = lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
+        #inherit unstablepkgs;
+        specialArgs = { inherit pkgs-unstable; };
         modules = [
           ./hosts/nixos-pc/configuration.nix
           ./modules/tom.nix
@@ -25,7 +30,8 @@
         ];
       };
       "nixos-t440" = lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
+        specialArgs = { inherit pkgs-unstable; };
         modules = [
           ./hosts/nixos-t440/configuration.nix
           ./modules/tom.nix
