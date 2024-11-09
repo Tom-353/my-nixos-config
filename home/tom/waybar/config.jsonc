@@ -23,16 +23,6 @@
 	"include": [
 		"~/.config/waybar/common-modules.jsonc"
 	],
-    "hyprland/window": {
-        "format": "{title}",
-        "separate-outputs": true,
-        "rewrite": {
-            "(.*) — Mozilla Firefox":    " 󰈹 $1",
-            "(.*) - Visual Studio Code": " 󰨞 $1",
-            "(.*) — LibreOffice (.*)":   " 󰈙 $2 | $1",
-            "(.*) - VLC media player":   " 󰕼 $1"
-        }
-    },
 	"group/audio": {
         "orientation": "inherit",
         "drawer": {
