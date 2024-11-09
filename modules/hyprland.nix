@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 
-let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
-in
 {
   sound.enable = true;
   programs.hyprland = {
@@ -124,7 +121,6 @@ in
     wayland-utils
     wl-clipboard
     wlroots
-    wlr-randr   # for regreet
     canta-theme # for regreet
   ];
   # Fix waybar not displaying Hyprland workspaces, add this to your configuration:
