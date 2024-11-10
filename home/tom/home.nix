@@ -126,6 +126,15 @@ in
     ".bashrc".text = ''
       PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n$ \[\033[0m\]"
     '';
+    ".config/imv/config".text = ''
+    [options]
+    overlay_font = Monospace:12
+    [binds]
+    <Ctrl+r> = rotate by 90
+    <Ctrl+f> = flip horizontal
+    n = next 1
+    <Shift+N> = prev 1
+    '';
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
