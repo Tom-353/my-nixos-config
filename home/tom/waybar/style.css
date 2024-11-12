@@ -91,6 +91,14 @@ window#waybar {
     padding-right: 3px;
     margin-right: 5px;
 }
+#battery.warning {
+    background: yellow;
+    color: #000;
+}
+#battery.critical {
+    background: red;
+    color: #000;
+}
 #tray{
     margin-right: 5px;
 }
