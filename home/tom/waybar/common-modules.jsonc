@@ -85,6 +85,7 @@
         },
 		"modules": [
             "custom/menu",
+            "idle_inhibitor",
             "custom/shade_button",
             "custom/logout_button",
             "custom/shutdown_button",
@@ -179,7 +180,7 @@
             // J
             "class<java> title<Mindustry>": "Ｍ",
             // K
-            "class<kitty> title<mc [.*>": "",
+            "class<kitty> title<mc \\[.*>": "",
             "class<kitty> title<termusic>": "󰝚",
             "class<kitty>": "",
             "class<krita>": "",
@@ -245,4 +246,14 @@
         "tooltip": true,
         "interval": 36000
     },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+             "activated": " ",
+             "deactivated": " "
+        },
+        "tooltip-format-activated":   "Idle inhibita active",
+        "tooltip-format-deactivated": "Idle inhibita inactive",
+        "timeout": 30.5
+   }
 }
