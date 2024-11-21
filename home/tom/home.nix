@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   primary_colour = "33ccff";
   secondary_colour = "00ff99";
@@ -119,32 +119,27 @@ in
   #    '';
     };
     ".config/waybar".source = ./waybar;
-    ".config/wofi".source = ./wofi;
+    ".config/wofi/style.css".source = ./wofi/style.css;
+    ".config/wofi/config".text = lib.generators.toKeyValue {}{
+      matching = "fuzzy";
+      dynamic_lines = true;
+    };
     ".profile".text = ''
-      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n$ \[\033[0m\]"
+      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n\[\033[32m\]$ \[\033[0m\]"
     '';
     ".bashrc".text = ''
-      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n$ \[\033[0m\]"
+      PS1="\n\[\033[0;34m\]\[\033[30;44m\]\u\[\033[34;46m\]\[\033[30m\]\h\[\033[0;36m\]\[\033[32m\] \w \n\[\033[32m\]$ \[\033[0m\]"
     '';
-    ".config/imv/config".text = ''
-    [options]
-    overlay_font = Monospace:12
-    [binds]
-    <Ctrl+r> = rotate by 90
-    <Ctrl+f> = flip horizontal
-    n = next 1
-    <Shift+N> = prev 1
-    '';
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    ".config/imv/config".text = lib.generators.toINI {}{
+      options.overlay_font = "Monospace:12";
+      binds = {
+        "<Ctrl+r>" = "rotate by 90";
+        "<Ctrl+f>" = "flip horizontal";
+        "n" = "next 1";
+        "<Shift+N>" = "prev 1";
+        "<Escape>" = "quit";
+      };
+    };
   };
 
   # Let Home Manager install and manage itself.
