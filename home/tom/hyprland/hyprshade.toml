@@ -1,8 +1,10 @@
 [[shades]]
-name = "vibrance"
+name = "blue-light-filter"
 default = true  # shader to use during times when there is no other shader scheduled
+#start_time = 19:00:00
+#end_time = 06:00:00   # optional if you have more than one shade with start_time
 
 [[shades]]
-name = "blue-light-filter"
-start_time = 19:00:00
-end_time = 06:00:00   # optional if you have more than one shade with start_time
+name = "vibrance"
+start_time = 06:00:00
+end_time = 07:00:00   # optional if you have more than one shade with start_time
