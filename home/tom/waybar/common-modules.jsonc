@@ -141,7 +141,7 @@
         "format": "{}",
         "format-en": "EN",
         "format-cz": "CZ",
-        "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+        "on-click": "hyprctl switchxkblayout $(hyprctl devices | grep 'main: yes' -B 3 | head -n 1) next"
     },
     "hyprland/workspaces": {
         "format": "{windows}",
