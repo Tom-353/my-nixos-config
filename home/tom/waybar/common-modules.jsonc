@@ -88,6 +88,7 @@
             "idle_inhibitor",
             "custom/shade_button",
             "custom/logout_button",
+            "custom/lock_button",
             "custom/shutdown_button",
             "custom/restart_button"
 		]
@@ -115,6 +116,11 @@
         "format": "󰿅",
         "on-click": "hyprctl dispatch exit",
         "tooltip-format": "Exit"
+    },
+    "custom/lock_button": {
+        "format": "󰌾",
+        "on-click": "loginctl lock-session",
+        "tooltip-format": "Lock"
     },
     "clock": {
         "format": " {:%R %d.%m.%Y} ",
@@ -150,7 +156,7 @@
         "window-rewrite": {
             // A
             // B
-            "class<org\\.gnome\\.baobab>": "󰥠",
+            "class<org\\.gnome\\.baobab>": "",
             "class<blender>":"󰂫",
             "class<\\.blueman-manager-wrapped>": "󰂯",
             // C

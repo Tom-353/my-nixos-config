@@ -72,11 +72,11 @@ window#waybar {
     border-right: #aaa 2px solid;
 }
 
-#custom-shade_button, #custom-logout_button, #custom-restart_button, #custom-shutdown_button, #custom-menu {
+#custom-shade_button, #custom-logout_button, #custom-restart_button, #custom-shutdown_button, #custom-menu,  #custom-lock_button {
     padding-left: 5px;
     padding-right: 5px;
 }
-#custom-shade_button:hover, #custom-logout_button:hover, #custom-restart_button:hover, #custom-shutdown_button:hover, #custom-menu:hover {
+#custom-shade_button:hover, #custom-logout_button:hover, #custom-restart_button:hover, #custom-shutdown_button:hover, #custom-menu:hover, #custom-lock_button:hover {
     background:  #fff;
     color: #000;
 }
