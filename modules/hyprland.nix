@@ -58,7 +58,10 @@
 #    style = "gtk2";
 #  };
   # Enable bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
   services.blueman.enable = true;
   systemd = {
     user.services = {
