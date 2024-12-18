@@ -128,7 +128,7 @@ in
     ".config/waybar".source = ./waybar;
     ".config/wofi/style.css".source = ./wofi/style.css;
     ".config/wofi/config".text = lib.generators.toKeyValue {}{
-      matching = "fuzzy";
+      matching = "multi-contains";
       dynamic_lines = true;
     };
     ".profile".text = ''
