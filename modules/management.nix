@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
-    randomizedDelaySec = "45min";
-  };
   nix.gc = {
     automatic = true;
     dates = "weekly";
