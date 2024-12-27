@@ -162,7 +162,7 @@
             // C
             "class<chrome-browser>": "",
             "class<chromium-browser>": "",
-            "class<code-url-handler>": "󰨞",
+            "class<code>": "󰨞",
             // D
             "class<discord>": "󰙯",
             "class<dolphin>": "",
@@ -203,7 +203,7 @@
             // O
             "class<org\\.openscad\\.>":"",
             // P
-            "class<pavucontrol>": " ",
+            "class<.*pavucontrol.*>": " ",
             "class<polkit.*>": "",
             "class<org\\.prismlauncher\\.PrismLauncher>": "󰍳",
             "class<PrusaSlicer>":"",
