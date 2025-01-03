@@ -27,6 +27,7 @@
           ./modules/hyprland.nix
           ./modules/gaming.nix
           ./modules/nvidia.nix
+          ./modules/vr.nix
         ];
       };
       "nixos-t440" = lib.nixosSystem {
