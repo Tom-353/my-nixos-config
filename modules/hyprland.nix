@@ -1,46 +1,12 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [ ./greeter.nix ];
   programs.hyprland = {
     enable = true; 
     xwayland.enable = true;
   };
   programs.hyprlock.enable = true;
-  # Enable greetd login manager
-  programs.regreet.enable = true;
-  environment.etc."greetd/regreet.toml".text = lib.mkForce ''
-    [background]
-    # Path to the background image
-    path = "/etc/greetd/background.png"
-
-    [GTK]
-    # Whether to use the dark theme
-    application_prefer_dark_theme = true
-
-    # Cursor theme name
-    cursor_theme_name = "Adwaita"
-
-    # Font name and size
-    #font_name = "Cantarell 16"
-
-    # Icon theme name
-    icon_theme_name = "Adwaita"
-
-    # GTK theme name
-    theme_name = "Canta"
-  '';
-  environment.etc."greetd/background.png".source = ./../background.png;
-  # https://www.reddit.com/r/NixOS/comments/u0cdpi/tuigreet_with_xmonad_how/
-  systemd.services.greetd.serviceConfig = {
-    Type = "idle";
-    StandardInput = "tty";
-    StandardOutput = "tty";
-    StandardError = "journal"; # Without this errors will spam on screen
-    # Without these bootlogs will spam on screen
-    TTYReset = true;
-    TTYVHangup = true;
-    TTYVTDisallocate = true;
-  };
   # Hint Electon apps to use wayland
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
@@ -123,7 +89,6 @@
     wayland-utils
     wl-clipboard
     wlroots
-    canta-theme # for regreet
   ];
   # Fix waybar not displaying Hyprland workspaces, add this to your configuration:
   nixpkgs.overlays = [
