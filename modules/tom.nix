@@ -8,9 +8,8 @@
     packages = [
       pkgs.ungoogled-chromium
       pkgs.discord
-      pkgs.krita pkgs.inkscape pkgs.gimp
+      pkgs.krita pkgs.inkscape
       pkgs.openscad pkgs.blender pkgs-unstable.prusa-slicer
-      pkgs.dwarf-fortress pkgs.mindustry #libremines
       pkgs.vscode-fhs
       pkgs.termusic pkgs-unstable.yt-dlp pkgs.ffmpeg # music player + youtube downloader
       pkgs.github-desktop
