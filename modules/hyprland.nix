@@ -68,6 +68,7 @@
     hyprpicker
     polkit_gnome
     swww # for wallpapers
+    eww # Elkowars wacky widgets
     nwg-look # Theme customization
     kitty # terminal
     wofi # app launcher

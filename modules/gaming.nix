@@ -14,7 +14,7 @@
   };
   environment.systemPackages = with pkgs; [
       protonup # Video game compatibility updater
-      prismlauncher heroic-unwrapped
+      prismlauncher heroic
   ];
 
 }
