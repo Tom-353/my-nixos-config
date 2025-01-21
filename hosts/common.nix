@@ -63,6 +63,8 @@
   environment.systemPackages = (with pkgs; [
     wget git htop mc tmux
     neofetch
+    neovim
+    gdb
     home-manager
     adwaita-icon-theme
     (python3.withPackages (python-pkgs: [
@@ -80,6 +82,10 @@
     pkgs-unstable.nixd
   ];
   
+  environment.variables = {
+    EDITOR = "nvim";
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   #nixpkgs.hostPlatform = "x86_64-linux";
 

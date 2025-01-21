@@ -84,6 +84,7 @@
     qalculate-gtk # calculator
     gparted # partitions
     gnome-disk-utility
+    wev
     # These packages might fix som of youre (Waybar) issues too
     meson
     wayland-protocols
