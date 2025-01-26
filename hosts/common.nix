@@ -79,7 +79,7 @@
     libqalculate qalculate-gtk # calculator
     nodejs # Needed for jaculus, can delete later
   ]) ++ [
-    pkgs-unstable.nixd
+    #pkgs-unstable.nixd
   ];
   
   environment.variables = {
