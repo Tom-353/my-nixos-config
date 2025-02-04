@@ -61,6 +61,12 @@
   programs.xfconf.enable = true;
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   services.tumbler.enable = true; # Thumbnail support for images
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "kitty.desktop" ];
+    };
+  };
   # Install Packages
   environment.systemPackages = with pkgs; [
     hypridle
