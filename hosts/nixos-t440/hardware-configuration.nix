@@ -26,7 +26,7 @@
 
   swapDevices = [
     {
-      device = "/dev/sda";
+      device = "/dev/sdb1";
       randomEncryption.enable = true; 
     }
   ];
