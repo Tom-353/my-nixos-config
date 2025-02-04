@@ -49,6 +49,7 @@
         modules = [
           ./hosts/nixos-t440/configuration.nix
           ./modules/tom.nix
+          {environment.systemPackages = [customNeovim.neovim];}
           ./modules/management.nix
           ./modules/hyprland.nix
           ./modules/gaming.nix
