@@ -2,9 +2,14 @@
   config.vim = {
     viAlias = true;
     vimAlias = true;
+    luaConfigRC.myconfig = /* lua */ ''
+      vim.opt.tabstop = 4
+      vim.opt.shiftwidth = 4
+      vim.opt.expandtab = true
+    '';
     spellcheck = {
       enable = true;
-      #languages = ["en" "cz"];
+      languages = ["en" "cz"];
       #programmingWordlist.enable = true;
     };
     lsp = {
@@ -34,6 +39,7 @@
       enableLSP = true;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
+      enableDAP = true;
       nix = {
         enable = true;
       };
