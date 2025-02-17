@@ -9,7 +9,7 @@
     '';
     spellcheck = {
       enable = true;
-      languages = ["en" "cz"];
+      languages = ["en" "cs"];
       #programmingWordlist.enable = true;
     };
     lsp = {
