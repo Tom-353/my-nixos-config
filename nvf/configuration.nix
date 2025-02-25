@@ -6,6 +6,10 @@
       vim.opt.tabstop = 4
       vim.opt.shiftwidth = 4
       vim.opt.expandtab = true
+      local prefix = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
+      vim.opt.undodir = { prefix .. "/nvim/.undo//"}
+      vim.opt.backupdir = {prefix .. "/nvim/.backup//"}
+      vim.opt.directory = { prefix .. "/nvim/.swp//"}
     '';
     spellcheck = {
       enable = true;
