@@ -61,7 +61,7 @@
 
   # List packages installed in system profile.
   environment.systemPackages = (with pkgs; [
-    wget git htop mc tmux
+    wget git btop mc tmux
     neofetch
     neovim
     gdb
