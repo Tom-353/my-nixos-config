@@ -152,6 +152,8 @@
     "hyprland/workspaces": {
         "format": "{windows}",
         "show-special": true,
+        "all-outputs": true,
+        "move-to-monitor": true,
         "window-rewrite-default": "",
         "window-rewrite": {
             // A
