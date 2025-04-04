@@ -246,7 +246,7 @@
         "spacing": 5
     },
         "custom/weather": {
-        "exec": "${HOME}/.config/waybar/scripts/get_weather.sh Brno+Czechia",
+        "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
         "return-type": "json",
         "format": "{} ",
         "tooltip": true,
