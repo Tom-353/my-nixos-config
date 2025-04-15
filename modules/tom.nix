@@ -4,7 +4,12 @@
   users.users.tom = {
     isNormalUser = true;
     description = "Tom";
-    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel" # Admin
+      "scanner" "lp" # Scanner access
+      "dialout" # Serial monitor access
+    ];
     packages = [
       pkgs.ungoogled-chromium
       pkgs.discord
@@ -15,5 +20,4 @@
       pkgs.github-desktop
     ];
   };
-  
 }
